@@ -1,5 +1,7 @@
 import { Champion } from "./definitions";
 
+export const CHAMPIONS_URL = "https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json";
+
 const getChampion = (championData: any): Champion => {
     return {
         id: championData.id,
@@ -11,7 +13,7 @@ const getChampion = (championData: any): Champion => {
 }
 
 export async function fetchChampions(): Promise<Champion[]> {
-    const response = await fetch("https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json");
+    const response = await fetch(CHAMPIONS_URL);
     const data = await response.json();
     const champions: Champion[] = [];
     Object.keys(data.data).map(key => {

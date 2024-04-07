@@ -6,7 +6,7 @@ import { ChampionPage, championLoader } from './pages/ChampionPage';
 import { championsLoader, ChampionsPage } from './pages/ChampionsPage';
 import { ErrorPage } from './pages/ErrorPage';
 
-let router = createBrowserRouter([
+export const routesConfig = [
   {
     path: "/",
     Component: Layout,
@@ -24,10 +24,12 @@ let router = createBrowserRouter([
       }
     ],
   },
-]);
+];
 
+const router = createBrowserRouter(routesConfig);
 
 function App() {
+  console.log('inside app')
   return (
     <RouterProvider router={router}></RouterProvider>
   );
