@@ -2,8 +2,8 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import { Layout } from './pages/Layout';
-import { ChampionPage, ChampionParams, championLoader } from './pages/ChampionPage';
-import { ChampionsPage } from './pages/ChampionsPage';
+import { ChampionPage, championLoader } from './pages/ChampionPage';
+import { championsLoader, ChampionsPage } from './pages/ChampionsPage';
 
 let router = createBrowserRouter([
   {
@@ -12,17 +12,12 @@ let router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: championsLoader,
         Component: ChampionsPage,
       },
       {
         path: "champions/:id",
-        loader: ({ params }) => {
-          const { id } = params as ChampionParams;
-          if (id) {
-            return championLoader(id)
-          }
-          return null;
-        },
+        loader: championLoader,
         Component: ChampionPage,
       }
     ],

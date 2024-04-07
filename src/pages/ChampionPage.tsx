@@ -1,4 +1,4 @@
-import { LoaderFunction, useLoaderData, useParams } from 'react-router-dom';
+import { Params, useLoaderData } from 'react-router-dom';
 import { fetchChampion } from '../data/champions';
 import { Champion } from '../data/definitions';
 
@@ -6,13 +6,12 @@ export type ChampionParams = {
     id: string;
 }
 
-interface LoaderData {
-    champion: Champion;
-}
-
-export const championLoader = async (id: string) => {
-    const champion: Champion = await fetchChampion(id);
-    return champion;
+export const championLoader = async ({ params }: { params: Params }) => {
+    const { id } = params as ChampionParams;
+    if (id) {
+        return await fetchChampion(id);
+    }
+    return null;
 }
 
 export const ChampionPage = () => {
