@@ -4,11 +4,13 @@ import './App.css';
 import { Layout } from './pages/Layout';
 import { ChampionPage, championLoader } from './pages/ChampionPage';
 import { championsLoader, ChampionsPage } from './pages/ChampionsPage';
+import { ErrorPage } from './pages/ErrorPage';
 
 let router = createBrowserRouter([
   {
     path: "/",
     Component: Layout,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
