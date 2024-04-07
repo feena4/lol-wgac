@@ -26,8 +26,8 @@ export const Champions = ({ champions, filterText }: { champions: Champion[], fi
                         }
                         const championLink = `champions/${champion.id}`;
                         return (
-                            <span key={champion.id} className="Champion-container">
-                                <Link to={championLink}>
+                            <span key={champion.id} >
+                                <Link to={championLink} className="Champion-container">
                                     <span className="Champion-img"><img src={champion.image} alt={champion.name} /></span>
                                     <span>{champion.name}</span>
                                 </Link>

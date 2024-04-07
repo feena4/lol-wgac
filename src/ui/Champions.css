@@ -4,4 +4,12 @@
     margin: 10px;
 }
 
+.Champion-description {
+    text-align: center;
+}
+
+.Champion-name {
+    margin-bottom: 10px;
+}
+
 .Champion-img {}

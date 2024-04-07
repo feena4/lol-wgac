@@ -1,7 +1,7 @@
 import { Params, useLoaderData } from 'react-router-dom';
 import { fetchChampion } from '../data/champions';
 import { Champion } from '../data/definitions';
-import { ChampionDescription } from '../ui/Champion';
+import { ChampionDescription } from '../ui/ChampionDescription';
 
 export type ChampionParams = {
     id: string;
