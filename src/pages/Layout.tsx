@@ -1,25 +1,26 @@
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
+const StyledList = styled.ul`
+    display: flex;
+`;
+const StyledListItem = styled.li`
+    display: flex;
+    margin-right: 9px;
+    padding-left: 3px;
+    box-sizing: border-box;
+`;
+const StyledLink = styled(Link)`
+    border: 1px solid;
+    border-radius: 11px;
+    padding: 2px 12px;
+    text-decoration: none;
+    &:hover {
+        border: 2px solid;
+    }
+`;
+
 export function Layout() {
-    const StyledList = styled.ul`
-        display: flex;
-    `;
-    const StyledListItem = styled.li`
-        display: flex;
-        margin-right: 9px;
-        padding-left: 3px;
-        box-sizing: border-box;
-    `;
-    const StyledLink = styled(Link)`
-        border: 1px solid;
-        border-radius: 11px;
-        padding: 2px 12px;
-        text-decoration: none;
-        &:hover {
-            border: 2px solid;
-        }
-    `;
     return (
         <div>
             {/* A "layout route" is a good place to put markup you want to
