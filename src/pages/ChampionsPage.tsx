@@ -4,7 +4,13 @@ import { Champion } from "../data/definitions";
 import { useLoaderData } from "react-router-dom";
 
 export const championsLoader = async () => {
-    return await fetchChampions();
+    let champions
+    try {
+        champions = await fetchChampions();
+    } catch (err) {
+        throw new Response("Something went wrong fetching the champions");
+    }
+    return champions;
 }
 
 export const ChampionsPage = () => {

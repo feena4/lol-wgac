@@ -10,7 +10,12 @@ export type ChampionParams = {
 export const championLoader = async ({ params }: { params: Params }) => {
     const { id } = params as ChampionParams;
     if (id) {
-        return await fetchChampion(id);
+        try {
+            return await fetchChampion(id);
+        }
+        catch (error) {
+            throw new Response(`Something went wrong fetching the champion ${id}`);
+        }
     }
     return null;
 }

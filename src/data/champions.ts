@@ -16,7 +16,7 @@ export async function fetchChampions(): Promise<Champion[]> {
     const response = await fetch(CHAMPIONS_URL);
     const data = await response.json();
     const champions: Champion[] = [];
-    Object.keys(data.data).map(key => {
+    Object.keys(data.data).forEach(key => {
         const championData = data.data[key];
         champions.push(getChampion(championData))
     });
