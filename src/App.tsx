@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './App.css';
 import { Layout } from './pages/Layout';
 import { ChampionPage, championLoader } from './pages/ChampionPage';
 import { championsLoader, ChampionsPage } from './pages/ChampionsPage';
@@ -29,7 +28,6 @@ export const routesConfig = [
 const router = createBrowserRouter(routesConfig);
 
 function App() {
-  console.log('inside app')
   return (
     <RouterProvider router={router}></RouterProvider>
   );
